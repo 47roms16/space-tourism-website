@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  /* || FONT || */
+  --font-bellefair: "Bellefair", serif;
+  --font-barlow: "Barlow", sans-serif;
+  --font-barlow-condensed: "Barlow Condensed", sans-serif;
+
+  /* || COLORS || */
+  --color-dark-drift: hsl(230, 35%, 7%);
+  --color-lavender-blue: hsl(231, 77%, 90%);
+}
