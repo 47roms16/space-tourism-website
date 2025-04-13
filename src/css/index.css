@@ -10,3 +10,29 @@
   --color-dark-drift: hsl(230, 35%, 7%);
   --color-lavender-blue: hsl(231, 77%, 90%);
 }
+
+html {
+  background-color: var(--color-dark-drift);
+}
+
+.max-container {
+  max-width: 96rem;
+  margin-inline: auto;
+}
+
+/* HEADER */
+
+.header-nav-ul {
+  counter-reset: leading-zero -1;
+}
+
+.header-nav-li {
+  counter-increment: leading-zero;
+}
+
+.header-nav-link::before {
+  content: counter(leading-zero, decimal-leading-zero);
+  font-weight: bold;
+  letter-spacing: 0.16875rem; /* 2.7px */
+  padding-right: 0.75rem; /* 12px */
+}
