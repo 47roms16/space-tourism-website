@@ -36,3 +36,39 @@ html {
   letter-spacing: 0.16875rem; /* 2.7px */
   padding-right: 0.75rem; /* 12px */
 }
+
+/* CTA Button "EXPLORE" */
+
+.cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170%;
+  height: 170%;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cta-btn:hover::before {
+  opacity: 0.1;
+}
+
+.cta-btn:hover span {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+@media (width < 64rem /* 1024px */) {
+  .header-nav-li:first-child .header-nav-link::before {
+    display: none;
+  }
+
+  .cta-btn::before {
+    width: 240%;
+    height: 240%;
+  }
+}
