@@ -91,3 +91,21 @@ h1 {
 .technology-h1 {
   @apply text-[3.5rem] max-xl:text-5xl max-lg:text-[2.5rem] max-md:text-2xl;
 }
+
+/* Background Image */
+
+.bg-home {
+  @apply bg-[url(/assets/home/background-home-desktop.jpg)] max-lg:bg-[url(/assets/home/background-home-tablet.jpg)] max-md:bg-[url(/assets/home/background-home-mobile.jpg)];
+}
+
+.bg-destination {
+  @apply bg-[url(/assets/destination/background-destination-desktop.jpg)] max-lg:bg-[url(/assets/destination/background-destination-tablet.jpg)] max-md:bg-[url(/assets/destination/background-destination-mobile.jpg)];
+}
+
+.bg-crew {
+  @apply bg-[url(/assets/crew/background-crew-desktop.jpg)] max-lg:bg-[url(/assets/crew/background-crew-tablet.jpg)] max-md:bg-[url(/assets/crew/background-crew-mobile.jpg)];
+}
+
+.bg-technology {
+  @apply bg-[url(/assets/technology/background-technology-desktop.jpg)] max-lg:bg-[url(/assets/technology/background-technology-tablet.jpg)] max-md:bg-[url(/assets/technology/background-technology-mobile.jpg)];
+}
