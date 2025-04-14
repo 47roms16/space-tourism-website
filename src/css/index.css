@@ -72,3 +72,22 @@ html {
     height: 240%;
   }
 }
+
+/* Text Content */
+
+h1 {
+  @apply font-bellefair mb-4 text-white uppercase;
+}
+
+.home-h1 {
+  @apply mb-0 text-[9rem] max-md:text-[5rem];
+}
+
+.destination-h1 {
+  @apply text-8xl max-xl:text-6xl max-lg:text-[5rem] max-md:text-[3.5rem];
+}
+
+.crew-h1,
+.technology-h1 {
+  @apply text-[3.5rem] max-xl:text-5xl max-lg:text-[2.5rem] max-md:text-2xl;
+}

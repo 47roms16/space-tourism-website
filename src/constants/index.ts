@@ -18,3 +18,22 @@ export const pageNavLinks: NavLinkType[] = [
     href: "/technology",
   },
 ];
+
+export const destinationLinks: NavLinkType[] = [
+  {
+    label: "Moon",
+    href: "/destination/moon",
+  },
+  {
+    label: "Mars",
+    href: "/destination/mars",
+  },
+  {
+    label: "Europa",
+    href: "/destination/europa",
+  },
+  {
+    label: "Titan",
+    href: "/destination/titan",
+  },
+];
