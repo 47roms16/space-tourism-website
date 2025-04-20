@@ -1,5 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 
+import {
+  loaderCrew,
+  loaderDestination,
+  loaderTechnology,
+} from "./helpers/loader";
+
 import Root from "./pages/Root";
 import Errorpage from "./pages/Errorpage";
 import Home from "./pages/Home";
@@ -18,10 +24,13 @@ function App() {
         {
           path: "destinations/:planet",
           element: <Destination />,
-        { path: "crew", element: <Crew />,
+          loader: loaderDestination,
+        },
+        { path: "crew", element: <Crew />, loader: loaderCrew },
         {
           path: "technology",
           element: <Technology />,
+          loader: loaderTechnology,
         },
       ],
     },
