@@ -37,6 +37,34 @@ html {
   padding-right: 0.75rem; /* 12px */
 }
 
+.header-nav-link.active::after,
+.destination-nav-link.active:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+.header-nav-link:not(.active):hover::after,
+.destination-nav-link:not(.active):hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.destination-nav-link.active:after,
+.destination-nav-link:not(.active):hover::after {
+  bottom: -0.75rem;
+}
+
 /* CTA Button "EXPLORE" */
 
 .cta-btn::before {

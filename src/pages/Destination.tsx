@@ -1,5 +1,5 @@
 import { NavLinkType } from "../constants/types";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 import { destinationLinks } from "../constants";
 
@@ -57,7 +57,9 @@ function DestinationNav() {
       <ul className="font-barlow-condensed text-lavender-blue flex gap-8 tracking-[2px] uppercase max-lg:justify-center">
         {destinationLinks.map((link: NavLinkType) => (
           <li key={link.label}>
-            <Link to={link.href}>{link.label}</Link>
+            <NavLink to={link.href} className="destination-nav-link | relative">
+              {link.label}
+            </NavLink>
           </li>
         ))}
       </ul>
