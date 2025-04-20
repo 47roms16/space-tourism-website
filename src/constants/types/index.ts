@@ -9,6 +9,7 @@ interface Image {
 }
 
 export interface Destination {
+  id: string;
   name: string;
   images: Image;
   description: string;
@@ -17,6 +18,7 @@ export interface Destination {
 }
 
 export interface Crew {
+  id: string;
   name: string;
   images: Image;
   role: string;
@@ -24,6 +26,7 @@ export interface Crew {
 }
 
 export interface Technology {
+  id: string;
   name: string;
   images: Image;
   description: string;
