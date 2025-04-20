@@ -1,37 +1,33 @@
-import { Route, Routes, useLocation } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 
-import Header from "./components/header/Header";
-import SectionLayout from "./components/SectionLayout";
+import Root from "./pages/Root";
+import Errorpage from "./pages/Errorpage";
 import Home from "./pages/Home";
 import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
 
-export default function App() {
-  const location = useLocation().pathname;
+function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <Errorpage />,
+      children: [
+        { index: true, element: <Home /> },
+        {
+          path: "destinations/:planet",
+          element: <Destination />,
+        { path: "crew", element: <Crew />,
+        {
+          path: "technology",
+          element: <Technology />,
+        },
+      ],
+    },
+  ]);
 
-  const bgClass =
-    location === "/destination"
-      ? "bg-destination"
-      : location === "/crew"
-        ? "bg-crew"
-        : location === "/technology"
-          ? "bg-technology"
-          : "bg-home";
-
-  return (
-    <div className={`${bgClass} | min-h-dvh bg-cover bg-top max-lg:bg-bottom`}>
-      <Header />
-      <main className="max-container | px-40 pb-16 max-xl:px-16">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route element={<SectionLayout />}>
-            <Route path="/destination" element={<Destination />} />
-            <Route path="/crew" element={<Crew />} />
-            <Route path="/technology" element={<Technology />} />
-          </Route>
-        </Routes>
-      </main>
-    </div>
-  );
+  return <RouterProvider router={router}></RouterProvider>;
 }
+
+export default App;
