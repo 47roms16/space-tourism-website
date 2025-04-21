@@ -1,36 +1,32 @@
+import { Technology as TechnologyType } from "../constants/types";
+
+import { NavLink, Outlet, useLoaderData, useLocation } from "react-router";
+
 import SectionLabel from "../components/content/SectionLabel";
-import TextContent from "../components/TextContent";
 
 function Technology() {
+  const techData = useLoaderData();
+  const location = useLocation();
+
+  const isTechnologyDetailPage = location.pathname.includes("/technology/");
+
+  const label = "SPACE LAUNCH 101";
+
   return (
     <>
-      <SectionLabel numberText="03" label="SPACE LAUNCH 101" />
-      <div className="flex items-center justify-between gap-8 pt-[5.75rem] max-lg:flex-col max-lg:gap-10 max-lg:pt-[5.5rem] max-lg:text-center max-md:gap-8">
-        <div className="max-lg:order-1">
-          <span className="font-bellefair text-[2rem] text-white/50">
-            THE TERMINOLOGY…
-          </span>
-          <TextContent
-            title={"LAUNCH VEHICLE"}
-            description="A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
-            headingClassName="technology-h1"
-          />
-        </div>
-        <Image
-          src="/assets/technology/image-launch-vehicle-portrait.jpg"
-          altText="img"
-        />
-      </div>
+      <SectionLabel numberText="03" label={label} />
+      {!isTechnologyDetailPage && (
+        <ul>
+          {techData.map((crew: TechnologyType) => (
+            <li key={crew.id}>
+              <NavLink to={`/technology/${crew.id}`}>{crew.name}</NavLink>
+            </li>
+          ))}
+        </ul>
+      )}
+      <Outlet context={techData} />
     </>
   );
 }
 
 export default Technology;
-
-function Image({ src, altText }: { src: string; altText: string }) {
-  return (
-    <div>
-      <img src={src} alt={altText} width={513} height={700} className="" />
-    </div>
-  );
-}
