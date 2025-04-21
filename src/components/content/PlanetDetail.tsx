@@ -1,0 +1,93 @@
+import { Destination as DestinationType } from "../../constants/types";
+import { NavLink, useOutletContext, useParams } from "react-router";
+
+import TextContent from "../TextContent";
+
+function Destination() {
+  const planetData: DestinationType[] = useOutletContext();
+  const params = useParams();
+
+  const planet = planetData.find(
+    (planet: DestinationType) => planet.id === params.planetId,
+  );
+
+  return (
+    <>
+      {planet && (
+        <div className="flex items-center gap-[6.75rem] pt-[9.75rem] max-xl:gap-10 max-lg:flex-col max-lg:gap-[5.25rem] max-lg:pt-16 max-lg:text-center max-md:gap-14">
+          <Image
+            src={planet.images.webp}
+            altText="A simple depiction of the moon"
+          />
+          <div>
+            <DestinationNav data={planetData} />
+            <TextContent
+              title={planet.name}
+              description={planet.description}
+              headingClassName="destination-h1"
+            />
+            <hr className="border-grey/50 my-10" />
+            <PlanetStats distance={planet.distance} travel={planet.travel} />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default Destination;
+
+function Image({ src, altText }: { src: string; altText: string }) {
+  return (
+    <div className="flex-1">
+      <img
+        src={src}
+        alt={altText}
+        width={445}
+        height={445}
+        className="aspect-square w-[30rem] max-lg:max-w-[18.75rem] max-sm:max-w-[9.375rem]"
+      />
+    </div>
+  );
+}
+
+function DestinationNav({ data }: { data: DestinationType[] }) {
+  return (
+    <nav className="mb-[3.25rem]">
+      <ul className="font-barlow-condensed text-lavender-blue flex gap-8 tracking-[2px] uppercase max-lg:justify-center">
+        {data.map((planet: DestinationType) => (
+          <li key={planet.id}>
+            <NavLink
+              to={`/destination/${planet.id}`}
+              className="destination-nav-link | relative"
+            >
+              {planet.name}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+function PlanetStats({
+  distance,
+  travel,
+}: Pick<DestinationType, "distance" | "travel">) {
+  return (
+    <div className="flex gap-[5.75rem] max-lg:justify-center max-md:flex-col max-md:gap-6">
+      <div>
+        <h2 className="text-lavender-blue font-barlow-condensed text-sm tracking-[2px]">
+          AVG. DISTANCE
+        </h2>
+        <p className="font-bellefair text-[1.75rem] text-white">{distance}</p>
+      </div>
+      <div>
+        <h2 className="text-lavender-blue font-barlow-condensed text-sm tracking-[2px]">
+          EST. TRAVEL TIME
+        </h2>
+        <p className="font-bellefair text-[1.75rem] text-white">{travel}</p>
+      </div>
+    </div>
+  );
+}

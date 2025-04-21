@@ -22,9 +22,10 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         {
-          path: "destinations/:planet",
+          path: "destination",
           element: <Destination />,
           loader: loaderDestination,
+          children: [{ path: ":planetId", element: <PlanetDetail /> }],
         },
         { path: "crew", element: <Crew />, loader: loaderCrew },
         {
