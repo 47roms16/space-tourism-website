@@ -8,6 +8,11 @@ interface Image {
   webp: string;
 }
 
+interface TechnologyImage {
+  portrait: string;
+  landscape: string;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -28,7 +33,7 @@ export interface Crew {
 export interface Technology {
   id: string;
   name: string;
-  images: Image;
+  images: TechnologyImage;
   description: string;
 }
 
