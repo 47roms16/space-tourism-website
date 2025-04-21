@@ -14,7 +14,7 @@ export interface Destination {
   images: Image;
   description: string;
   distance: string;
-  travelTime: string;
+  travel: string;
 }
 
 export interface Crew {
