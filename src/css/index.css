@@ -130,8 +130,13 @@ h1 {
   @apply mb-0 text-[9rem] max-md:text-[5rem];
 }
 
-.destination-h1 {
+.destination-h1,
+.destination-main-h1 {
   @apply text-8xl max-xl:text-6xl max-lg:text-[5rem] max-md:text-[3.5rem];
+}
+
+.destination-main-h1 {
+  @apply max-sm:text-2xl;
 }
 
 .crew-h1,
