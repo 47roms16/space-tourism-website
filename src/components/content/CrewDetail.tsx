@@ -1,6 +1,6 @@
 import { Crew as CrewType } from "../../constants/types";
 
-import { useOutletContext, useParams } from "react-router";
+import { NavLink, useOutletContext, useParams } from "react-router";
 
 import TextContent from "../TextContent";
 
@@ -24,7 +24,7 @@ function CrewDetail() {
               headingClassName="crew-h1"
             />
           </div>
-          <Image src={crew.images.webp} altText={crew.name} />
+          <Pagination data={crewData} />
         </div>
       )}
     </>
@@ -33,10 +33,18 @@ function CrewDetail() {
 
 export default CrewDetail;
 
-function Image({ src, altText }: { src: string; altText: string }) {
+function Pagination({ data }: { data: CrewType[] }) {
+  const crewData = data;
   return (
-    <div>
-      <img src={src} alt={altText} width={513} height={700} className="" />
-    </div>
+    <ul className="flex justify-center gap-10">
+      {crewData.map((crew: CrewType) => (
+        <li key={crew.id}>
+          <NavLink
+            to={`/crew/${crew.id}`}
+            className="crew-pagination-link | block size-[15px] rounded-full"
+          ></NavLink>
+        </li>
+      ))}
+    </ul>
   );
 }

@@ -68,6 +68,22 @@ html {
   bottom: -0.75rem;
 }
 
+.crew-pagination-link {
+  background-color: hsla(0, 0%, 100%, 0.17);
+}
+
+.crew-pagination-link.active {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.crew-pagination-link:not(.active):hover {
+  background-color: hsla(0, 0%, 100%, 0.5);
+}
+
+.crew-link:has(a:focus-visible) {
+  transform: scale(0.9);
+}
+
 /* CTA Button "EXPLORE" */
 
 .cta-btn::before {
