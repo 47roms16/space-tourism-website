@@ -26,7 +26,7 @@ function Destination() {
       <SectionLabel numberText="01" label={label} />
       {!isPlanetDetailPage && (
         <section className="pt-10">
-          <h1 className="font-barlow-condensed text-center text-4xl">
+          <h1 className="destination-main-h1 | text-center">
             Planet Destination
           </h1>
           <DestinationCarousel planetData={planetData} />
