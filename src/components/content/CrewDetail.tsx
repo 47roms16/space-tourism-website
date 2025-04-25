@@ -14,16 +14,17 @@ function CrewDetail() {
     <>
       {crew && (
         <div className="flex justify-between gap-8 max-lg:flex-col max-lg:gap-8 max-lg:pt-16 max-lg:text-center max-md:gap-9">
-          <div className="flex flex-col items-center justify-between max-lg:gap-14 lg:pt-32 lg:pb-12">
-          <div>
+          <div className="flex flex-col justify-between max-lg:items-center max-lg:gap-14 lg:pt-32 lg:pb-12">
+            <div>
               <span className="font-bellefair mb-4 inline-block text-[2rem] text-white/50 uppercase">
-              {crew.role}
-            </span>
-            <TextContent
-              title={crew.name}
-              description={crew.bio}
-              headingClassName="crew-h1"
-            />
+                {crew.role}
+              </span>
+              <TextContent
+                title={crew.name}
+                description={crew.bio}
+                headingClassName="crew-h1"
+              />
+            </div>
             <Pagination data={crewData} />
           </div>
           <picture className="before:from-dark-drift/10 before:to-dark-drift relative before:absolute before:inset-x-0 before:bottom-0 before:h-[10%] before:w-full before:bg-gradient-to-b">
@@ -41,7 +42,7 @@ export default CrewDetail;
 function Pagination({ data }: { data: CrewType[] }) {
   const crewData = data;
   return (
-    <ul className="flex justify-center gap-10">
+    <ul className="flex gap-10">
       {crewData.map((crew: CrewType) => (
         <li key={crew.id}>
           <NavLink
