@@ -23,7 +23,7 @@ html {
   margin-inline: auto;
 }
 
-/* HEADER */
+/* HEADER & Navigation Links */
 
 .header-nav-ul {
   counter-reset: leading-zero -1;
@@ -39,6 +39,8 @@ html {
   letter-spacing: 0.16875rem; /* 2.7px */
   padding-right: 0.75rem; /* 12px */
 }
+
+/* HEADER & Content Nested Links */
 
 .header-nav-link.active::after,
 .destination-nav-link.active:after {
