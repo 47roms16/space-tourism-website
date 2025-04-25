@@ -150,7 +150,7 @@ h1 {
 }
 
 .bg-crew {
-  @apply bg-[url(/assets/crew/background-crew-desktop.jpg)] max-lg:bg-[url(/assets/crew/background-crew-tablet.jpg)] max-md:bg-[url(/assets/crew/background-crew-mobile.jpg)];
+  @apply bg-[url(/assets/crew/background-crew-desktop.jpg)] bg-center max-lg:bg-[url(/assets/crew/background-crew-tablet.jpg)] max-md:bg-[url(/assets/crew/background-crew-mobile.jpg)];
 }
 
 .bg-technology {
