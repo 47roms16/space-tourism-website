@@ -15,7 +15,7 @@ function Root() {
   return (
     <div className={`${bgClass} | min-h-dvh bg-cover bg-top max-lg:bg-bottom`}>
       <Header />
-      <main className="max-container | px-40 pt-12 pb-16 max-xl:px-16 max-lg:pt-10 max-md:pt-12">
+      <main className="max-container | px-40 max-xl:px-16 max-lg:pt-10 max-md:px-6 max-md:pt-12">
         <Outlet />
       </main>
     </div>
