@@ -15,7 +15,7 @@ function CrewDetail() {
       {crew && (
         <div className="flex justify-between gap-8 max-lg:flex-col max-lg:gap-8 max-lg:pt-16 max-lg:text-center max-md:gap-9">
           <div>
-            <span className="font-bellefair text-[2rem] text-white/50 uppercase">
+              <span className="font-bellefair mb-4 inline-block text-[2rem] text-white/50 uppercase">
               {crew.role}
             </span>
             <TextContent
