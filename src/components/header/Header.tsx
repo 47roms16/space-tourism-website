@@ -5,7 +5,7 @@ import Line from "../Line";
 
 function Header() {
   return (
-    <header className="mx-auto max-w-[96rem] pt-10 pl-16 max-lg:pt-0 max-lg:pl-10 max-md:px-6 max-md:pt-6">
+    <header className="mx-auto max-w-[96rem] pt-10 max-2xl:pl-16 max-lg:pt-0 max-lg:pl-10 max-md:px-6 max-md:pt-6">
       <nav className="flex items-center justify-between">
         <Link to="/">
           <svg className="aspect-square w-12 max-md:max-w-10">
