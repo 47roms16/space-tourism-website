@@ -14,7 +14,9 @@ function Technology() {
 
   return (
     <>
-      <SectionLabel numberText="03" label={label} />
+      <div className="px-40 max-xl:px-16 max-md:px-6">
+        <SectionLabel numberText="03" label={label} />
+      </div>
       {!isTechnologyDetailPage && (
         <ul>
           {techData.map((crew: TechnologyType) => (
