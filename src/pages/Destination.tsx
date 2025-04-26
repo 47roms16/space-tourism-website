@@ -3,6 +3,7 @@ import { Destination as DestinationType } from "@/constants/types";
 import { useState, useEffect } from "react";
 import { NavLink, Outlet, useLoaderData, useLocation } from "react-router";
 
+import SectionLayout from "@/components/SectionLayout";
 import SectionLabel from "../components/content/SectionLabel";
 import {
   Carousel,
@@ -22,7 +23,7 @@ function Destination() {
   const label = "PICK YOUR DESTINATION";
 
   return (
-    <>
+    <SectionLayout>
       <SectionLabel numberText="01" label={label} />
       {!isPlanetDetailPage && (
         <section className="pt-10">
@@ -33,7 +34,7 @@ function Destination() {
         </section>
       )}
       <Outlet context={planetData} />
-    </>
+    </SectionLayout>
   );
 }
 
@@ -58,13 +59,13 @@ function DestinationCarousel({
   }, [api]);
 
   return (
-    <div className="flex items-center pt-7">
+    <div className="flex items-center pt-7 max-sm:pt-32">
       <Carousel opts={{ loop: true }} setApi={setApi}>
         <CarouselContent>
           {planetData.map((planet: DestinationType, index: number) => (
             <CarouselItem
               key={planet.id}
-              className="max-w-fit basis-1/2 max-lg:basis-full"
+              className="max-xs:max-w-[9.375rem] max-w-fit basis-1/2 max-lg:basis-full max-md:max-w-[18.75rem] max-md:p-0"
             >
               <NavLink to={`/destination/${planet.id}`}>
                 <figure
@@ -83,8 +84,8 @@ function DestinationCarousel({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="-left-16 cursor-pointer p-7 active:opacity-50 max-xl:left-0 max-xl:p-4 max-lg:-left-5 max-sm:-left-10" />
-        <CarouselNext className="-right-16 cursor-pointer p-7 active:opacity-50 max-xl:right-0 max-xl:p-4 max-lg:-right-5 max-sm:-right-10" />
+        <CarouselPrevious className="-left-16 cursor-pointer p-7 active:opacity-50 max-xl:left-0 max-xl:p-4 max-lg:-left-5 max-md:left-0 max-sm:-left-10 max-sm:hidden" />
+        <CarouselNext className="-right-16 cursor-pointer p-7 active:opacity-50 max-xl:right-0 max-xl:p-4 max-lg:-right-5 max-md:right-0 max-sm:-right-10 max-sm:hidden" />
       </Carousel>
     </div>
   );

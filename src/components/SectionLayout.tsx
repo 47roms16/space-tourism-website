@@ -1,10 +1,8 @@
-import { Outlet } from "react-router";
+import { ReactNode } from "react";
 
-function SectionLayout() {
+function SectionLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="pt-12">
-      <Outlet />
-    </div>
+    <section className="px-40 max-xl:px-16 max-md:px-6">{children}</section>
   );
 }
 

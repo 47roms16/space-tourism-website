@@ -2,6 +2,7 @@ import { Crew as CrewType } from "../constants/types";
 
 import { NavLink, Outlet, useLoaderData, useLocation } from "react-router";
 
+import SectionLayout from "@/components/SectionLayout";
 import SectionLabel from "../components/content/SectionLabel";
 
 function Crew() {
@@ -13,7 +14,7 @@ function Crew() {
   const label = "MEET YOUR CREW";
 
   return (
-    <>
+    <SectionLayout>
       <SectionLabel numberText="02" label={label} />
       {!isCrewDetailPage && (
         <section className="pt-10">
@@ -22,7 +23,7 @@ function Crew() {
         </section>
       )}
       <Outlet context={crewData} />
-    </>
+    </SectionLayout>
   );
 }
 
