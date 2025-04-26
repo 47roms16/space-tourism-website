@@ -3,7 +3,7 @@ import { NavLink, useOutletContext, useParams } from "react-router";
 
 import TextContent from "../TextContent";
 
-function Destination() {
+function PlanetDetail() {
   const planetData: DestinationType[] = useOutletContext();
   const params = useParams();
 
@@ -35,7 +35,7 @@ function Destination() {
   );
 }
 
-export default Destination;
+export default PlanetDetail;
 
 function Image({ src, altText }: { src: string; altText: string }) {
   return (
