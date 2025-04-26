@@ -25,7 +25,7 @@ function TechnologyDetail() {
               headingClassName="technology-h1"
             />
           </div>
-          <Image src={tech.images.portrait} altText="img" />
+          <Image images={tech.images} name={tech.name} />
         </div>
       )}
     </>
@@ -51,5 +51,20 @@ function Pagination({ data }: { data: TechnologyType[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+type ImageProps = Pick<TechnologyType, "images" | "name">;
+
+function Image({ images, name }: ImageProps) {
+  const { portrait, landscape } = images;
+
+  return (
+    <div>
+      <picture>
+        <source srcSet={landscape} media="(max-width:1024px)" />
+        <img srcSet={portrait} alt={`Image of ${name}`} className="" />
+      </picture>
+    </div>
   );
 }
