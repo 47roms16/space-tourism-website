@@ -46,9 +46,9 @@ function CrewList({ crewData }: { crewData: CrewType[] }) {
                     {crew.role}
                   </h2>
                   <picture className="before:from-dark-drift/10 before:to-dark-drift relative block before:absolute before:inset-x-0 before:bottom-0 before:h-[30%] before:w-full before:rounded-2xl before:bg-gradient-to-b">
-                    <source srcSet={crew.images.webp} />
+                    <source srcSet={crew.images.webp} type="image/webp" />
                     <img
-                      src={crew.images.png}
+                      srcSet={crew.images.png}
                       alt={`Image of ${crew.name}`}
                       className="aspect-[3/4] w-full max-w-2xs object-contain"
                     />
