@@ -15,8 +15,7 @@ function TechnologyDetail() {
   return (
     <>
       {tech && (
-        <div className="flex items-center justify-between gap-8 pt-[5.75rem] max-lg:flex-col max-lg:gap-10 max-lg:pt-[5.5rem] max-lg:text-center max-md:gap-8">
-          <div className="max-lg:order-1">
+          <Pagination data={techData} />
             <span className="font-bellefair text-[2rem] text-white/50">
               THE TERMINOLOGY…
             </span>
@@ -35,10 +34,22 @@ function TechnologyDetail() {
 
 export default TechnologyDetail;
 
-function Image({ src, altText }: { src: string; altText: string }) {
+function Pagination({ data }: { data: TechnologyType[] }) {
+  const techData = data;
   return (
-    <div>
-      <img src={src} alt={altText} width={513} height={700} className="" />
-    </div>
+    <ul className="flex flex-col gap-8 max-lg:order-1 max-lg:flex-row max-lg:gap-4">
+      {techData.map((tech: TechnologyType, index) => (
+        <li key={tech.id}>
+          <NavLink
+            to={`/technology/${tech.id}`}
+            className="technology-pagination | flex size-20 items-center justify-center rounded-full max-lg:size-14 max-sm:size-10"
+          >
+            <span className="font-bellefair text-[2rem] max-lg:text-2xl max-sm:text-lg">
+              {index + 1}
+            </span>
+          </NavLink>
+        </li>
+      ))}
+    </ul>
   );
 }
