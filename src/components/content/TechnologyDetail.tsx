@@ -16,6 +16,7 @@ function TechnologyDetail() {
     <>
       {tech && (
           <Pagination data={techData} />
+          <div className="max-lg:order-1 max-lg:px-10 max-sm:px-6">
             <span className="font-bellefair text-[2rem] text-white/50">
               THE TERMINOLOGY…
             </span>
