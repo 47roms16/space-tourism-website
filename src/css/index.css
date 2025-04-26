@@ -89,6 +89,17 @@ html {
   transform: scale(0.9);
 }
 
+.technology-pagination.active {
+  color: var(--color-dark-drift);
+  background-color: white;
+}
+
+.technology-pagination {
+  color: white;
+  background-color: transparent;
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+}
+
 /* CTA Button "EXPLORE" */
 
 .cta-btn::before {
