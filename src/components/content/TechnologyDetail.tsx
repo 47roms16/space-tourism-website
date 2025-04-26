@@ -13,7 +13,7 @@ function TechnologyDetail() {
   );
 
   return (
-    <>
+    <section className="pt-[5.75rem] pb-16 pl-40 max-lg:px-0 max-lg:pt-[5.5rem]">
       {tech && (
         <div className="flex items-center justify-between gap-8 max-lg:flex-col max-lg:gap-10 max-lg:text-center max-md:gap-8">
           <Pagination data={techData} />
@@ -30,7 +30,7 @@ function TechnologyDetail() {
           <Image images={tech.images} name={tech.name} />
         </div>
       )}
-    </>
+    </section>
   );
 }
 
