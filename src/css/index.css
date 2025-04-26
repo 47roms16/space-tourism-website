@@ -12,6 +12,9 @@
   /* || COLORS || */
   --color-dark-drift: hsl(230, 35%, 7%);
   --color-lavender-blue: hsl(231, 77%, 90%);
+
+  /* BREAKPOINTS */
+  --breakpoint-xs: 30rem;
 }
 
 html {
