@@ -62,7 +62,7 @@ function DestinationCarousel({
     <div className="flex items-center pt-7 max-sm:pt-32">
       <Carousel opts={{ loop: true }} setApi={setApi}>
         <CarouselContent>
-          {planetData.map((planet: DestinationType, index: number) => (
+          {planetData.map((planet: DestinationType, index) => (
             <CarouselItem
               key={planet.id}
               className="max-xs:max-w-[9.375rem] max-w-fit basis-1/2 max-lg:basis-full max-md:max-w-[18.75rem] max-md:p-0"
