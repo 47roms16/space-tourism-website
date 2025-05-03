@@ -5,7 +5,7 @@ import { NavLink, Outlet, useLoaderData, useLocation } from "react-router";
 import SectionLabel from "../components/content/SectionLabel";
 
 function Technology() {
-  const techData = useLoaderData();
+  const techData: TechnologyType[] = useLoaderData();
   const location = useLocation();
 
   const isTechnologyDetailPage = location.pathname.includes("/technology/");
