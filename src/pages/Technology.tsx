@@ -1,6 +1,13 @@
 import { Technology as TechnologyType } from "../constants/types";
 
-import { NavLink, Outlet, useLoaderData, useLocation } from "react-router";
+import {
+  Navigate,
+  NavLink,
+  Outlet,
+  useLoaderData,
+  useLocation,
+  useOutletContext,
+} from "react-router";
 
 import SectionLabel from "../components/content/SectionLabel";
 
@@ -32,3 +39,11 @@ function Technology() {
 }
 
 export default Technology;
+
+export function NavigateToFirstData() {
+  const data = useOutletContext() as TechnologyType[];
+
+  const firstData = data[0]?.id;
+
+  return <Navigate to={`/technology/${firstData}`} />;
+}

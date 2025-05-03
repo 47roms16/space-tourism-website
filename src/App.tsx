@@ -13,7 +13,7 @@ import Destination from "./pages/Destination";
 import PlanetDetail from "./components/content/PlanetDetail";
 import Crew from "./pages/Crew";
 import CrewDetail from "./components/content/CrewDetail";
-import Technology from "./pages/Technology";
+import Technology, { NavigateToFirstData } from "./pages/Technology";
 import TechnologyDetail from "./components/content/TechnologyDetail";
 
 function App() {
@@ -40,7 +40,13 @@ function App() {
           path: "technology",
           element: <Technology />,
           loader: loaderTechnology,
-          children: [{ path: ":technologyId", element: <TechnologyDetail /> }],
+          children: [
+            {
+              index: true,
+              element: <NavigateToFirstData />,
+            },
+            { path: ":technologyId", element: <TechnologyDetail /> },
+          ],
         },
       ],
     },
