@@ -20,6 +20,8 @@ export interface Destination {
   description: string;
   distance: string;
   travel: string;
+  modelPath: string;
+  credit: string;
 }
 
 export interface Crew {

@@ -33,3 +33,11 @@ This project was built using React and TypeScript. I wrote the codes for layout,
 
 - Design from [Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
 - Built by [Rommel San Jose](https://github.com/47roms16)
+
+"Moon" texture (https://skfb.ly/6UxZx) by AirStudios is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+"Mars" texture (https://skfb.ly/6Uynr) by AirStudios is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+"Europa" texture (https://skfb.ly/LsSs) by uperesito is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+"Titan" texture (https://skfb.ly/QuBK) by uperesito is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).

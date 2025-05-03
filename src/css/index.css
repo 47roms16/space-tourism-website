@@ -160,6 +160,10 @@ h1 {
   @apply text-[3.5rem] max-xl:text-5xl max-lg:text-[2.5rem] max-md:text-2xl;
 }
 
+.figure-3d:hover .credit-text {
+  opacity: 0.75;
+}
+
 /* Background Image */
 
 .bg-home {

@@ -2,6 +2,8 @@ import { Destination as DestinationType } from "../../constants/types";
 import { NavLink, useOutletContext, useParams } from "react-router";
 
 import TextContent from "../TextContent";
+import { PlanetModel } from "@/models/PlanetModel";
+import { Canvas } from "@react-three/fiber";
 
 function PlanetDetail() {
   const planetData: DestinationType[] = useOutletContext();
@@ -14,12 +16,18 @@ function PlanetDetail() {
   return (
     <>
       {planet && (
-        <div className="flex items-center gap-[6.75rem] pt-[9.75rem] max-xl:gap-10 max-lg:flex-col max-lg:gap-[5.25rem] max-lg:pt-16 max-lg:text-center max-md:gap-14">
-          <Image
-            src={planet.images.webp}
-            altText="A simple depiction of the moon"
-          />
-          <div>
+        <div className="flex items-center pt-[9.75rem] max-2xl:gap-10 max-lg:flex-col max-lg:gap-[5.25rem] max-lg:pt-16 max-lg:text-center max-md:gap-14">
+          <figure className="figure-3d | relative flex-1">
+            <Canvas className="fade aspect-square max-w-[30rem] max-lg:max-w-[18.75rem] max-sm:max-w-[9.375rem]">
+              <ambientLight intensity={1.5} />
+              <PlanetModel modelPath={planet.modelPath} />
+            </Canvas>
+            <figcaption className="credit-text | bg-dark-drift/50 absolute bottom-0 max-w-[50ch] rounded-2xl p-2 text-white opacity-0 transition-opacity duration-500">
+              {planet.credit}
+            </figcaption>
+          </figure>
+
+          <div className="flex-1">
             <DestinationNav data={planetData} />
             <TextContent
               title={planet.name}
