@@ -27,7 +27,7 @@ function CrewDetail() {
             </div>
             <Pagination data={crewData} />
           </div>
-          <picture className="before:from-dark-drift/10 before:to-dark-drift relative before:absolute before:inset-x-0 before:bottom-0 before:h-[10%] before:w-full before:bg-gradient-to-b">
+          <picture className="before:from-dark-drift/10 before:to-dark-drift relative self-end before:absolute before:inset-x-0 before:bottom-0 before:h-[10%] before:w-full before:bg-gradient-to-b">
             <source srcSet={crew.images.webp} />
             <img src={crew.images.png} alt={`Image of ${crew.name}`} />
           </picture>
