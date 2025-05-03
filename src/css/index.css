@@ -54,10 +54,11 @@ html {
   width: 100%;
   height: 3px;
   background-color: white;
+  transition: opacity 600ms;
 }
 
-.header-nav-link:not(.active):hover::after,
-.destination-nav-link:not(.active):hover::after {
+.header-nav-link:not(.active)::after,
+.destination-nav-link:not(.active)::after {
   content: "";
   position: absolute;
   left: 0;
@@ -65,11 +66,17 @@ html {
   width: 100%;
   height: 3px;
   background-color: white;
+  opacity: 0;
+  transition: opacity 600ms;
+}
+
+.header-nav-link:not(.active):hover::after,
+.destination-nav-link:not(.active):hover::after {
   opacity: 0.5;
 }
 
 .destination-nav-link.active:after,
-.destination-nav-link:not(.active):hover::after {
+.destination-nav-link:not(.active)::after {
   bottom: -0.75rem;
 }
 
@@ -113,7 +120,11 @@ html {
   background-color: white;
   border-radius: 50%;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 600ms;
+}
+
+.cta-btn span {
+  transition: opacity 600ms;
 }
 
 .cta-btn:hover::before {
@@ -122,7 +133,6 @@ html {
 
 .cta-btn:hover span {
   opacity: 0.5;
-  transition: opacity 0.3s;
 }
 
 @media (width < 64rem /* 1024px */) {
