@@ -1,19 +1,32 @@
 import { Technology as TechnologyType } from "../../constants/types";
 
-import { NavLink, useOutletContext, useParams } from "react-router";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+import {
+  NavLink,
+  useLocation,
+  useOutletContext,
+  useParams,
+} from "react-router";
 
 import TextContent from "../TextContent";
 
 function TechnologyDetail() {
   const techData: TechnologyType[] = useOutletContext();
   const params = useParams();
+  const location = useLocation();
 
   const tech = techData.find(
     (tech: TechnologyType) => tech.id === params.technologyId,
   );
 
+  useGSAP(() => {
+    gsap.from(".tech-fade", { opacity: 0.3, duration: 0.6 });
+  }, [location]);
+
   return (
-    <section className="pt-[5.75rem] pb-16 pl-40 max-lg:px-0 max-lg:pt-[5.5rem]">
+    <section className="tech-fade | pt-[5.75rem] pb-16 pl-40 max-lg:px-0 max-lg:pt-[5.5rem]">
       {tech && (
         <div className="flex items-center justify-between gap-8 max-lg:flex-col max-lg:gap-10 max-lg:text-center max-md:gap-8">
           <Pagination data={techData} />

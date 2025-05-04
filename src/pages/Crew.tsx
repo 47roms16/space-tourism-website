@@ -15,10 +15,12 @@ function Crew() {
 
   return (
     <SectionLayout>
-      <SectionLabel numberText="02" label={label} />
+      <div className="fade">
+        <SectionLabel numberText="02" label={label} />
+      </div>
       {!isCrewDetailPage && (
         <section className="pt-10">
-          <h1 className="crew-h1 | text-center">Crew Members</h1>
+          <h1 className="crew-h1 fade | text-center">Crew Members</h1>
           <CrewList crewData={crewData} />
         </section>
       )}

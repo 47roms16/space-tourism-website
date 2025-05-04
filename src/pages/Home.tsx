@@ -11,7 +11,7 @@ function Home() {
     <SectionLayout>
       <div className="flex items-center justify-between pt-[24rem] max-lg:flex-col max-lg:pt-32 max-lg:text-center max-md:pt-6">
         <div>
-          <p className="text-lavender-blue font-barlow-condensed text-[1.75rem] tracking-[4px] max-md:text-base max-md:tracking-[calc(15*0.01em)]">
+          <p className="fade | text-lavender-blue font-barlow-condensed text-[1.75rem] tracking-[4px] max-md:text-base max-md:tracking-[calc(15*0.01em)]">
             SO, YOU WANT TO TRAVEL TO
           </p>
           <TextContent

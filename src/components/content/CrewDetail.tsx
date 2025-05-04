@@ -15,8 +15,8 @@ function CrewDetail() {
       {crew && (
         <div className="flex min-h-[43.75rem] justify-between gap-8 max-lg:flex-col max-lg:gap-8 max-lg:pt-16 max-lg:text-center max-md:gap-9">
           <div className="flex flex-col justify-between max-lg:items-center max-lg:gap-14 lg:pt-32 lg:pb-12">
-            <div>
-              <span className="font-bellefair mb-4 inline-block text-[2rem] text-white/50 uppercase">
+            <div className="fade">
+              <span className="fade | font-bellefair mb-4 inline-block text-[2rem] text-white/50 uppercase">
                 {crew.role}
               </span>
               <TextContent
@@ -27,7 +27,7 @@ function CrewDetail() {
             </div>
             <Pagination data={crewData} />
           </div>
-          <picture className="before:from-dark-drift/10 before:to-dark-drift relative self-end before:absolute before:inset-x-0 before:bottom-0 before:h-[10%] before:w-full before:bg-gradient-to-b">
+          <picture className="fade | before:from-dark-drift/10 before:to-dark-drift relative self-end before:absolute before:inset-x-0 before:bottom-0 before:h-[10%] before:w-full before:bg-gradient-to-b">
             <source srcSet={crew.images.webp} />
             <img src={crew.images.png} alt={`Image of ${crew.name}`} />
           </picture>

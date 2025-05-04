@@ -17,8 +17,8 @@ function PlanetDetail() {
     <>
       {planet && (
         <div className="flex items-center pt-[9.75rem] max-2xl:gap-10 max-lg:flex-col max-lg:gap-[5.25rem] max-lg:pt-16 max-lg:text-center max-md:gap-14">
-          <figure className="figure-3d | relative flex-1">
-            <Canvas className="fade aspect-square max-w-[30rem] max-lg:max-w-[18.75rem] max-sm:max-w-[9.375rem]">
+          <figure className="figure-3d fade | relative flex-1">
+            <Canvas className="aspect-square max-w-[30rem] max-lg:max-w-[18.75rem] max-sm:max-w-[9.375rem]">
               <ambientLight intensity={1.5} />
               <PlanetModel modelPath={planet.modelPath} />
             </Canvas>
@@ -29,13 +29,15 @@ function PlanetDetail() {
 
           <div className="flex-1">
             <DestinationNav data={planetData} />
-            <TextContent
-              title={planet.name}
-              description={planet.description}
-              headingClassName="destination-h1"
-            />
-            <hr className="border-grey/50 my-10" />
-            <PlanetStats distance={planet.distance} travel={planet.travel} />
+            <div className="fade">
+              <TextContent
+                title={planet.name}
+                description={planet.description}
+                headingClassName="destination-h1"
+              />
+              <hr className="border-grey/50 my-10" />
+              <PlanetStats distance={planet.distance} travel={planet.travel} />
+            </div>
           </div>
         </div>
       )}

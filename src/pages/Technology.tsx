@@ -21,7 +21,7 @@ function Technology() {
 
   return (
     <>
-      <div className="px-40 max-xl:px-16 max-md:px-6">
+      <div className="tech-fade | px-40 max-xl:px-16 max-md:px-6">
         <SectionLabel numberText="03" label={label} />
       </div>
       {!isTechnologyDetailPage && (

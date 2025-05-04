@@ -24,10 +24,12 @@ function Destination() {
 
   return (
     <SectionLayout>
-      <SectionLabel numberText="01" label={label} />
+      <div className="fade">
+        <SectionLabel numberText="01" label={label} />
+      </div>
       {!isPlanetDetailPage && (
         <section className="pt-10">
-          <h1 className="destination-main-h1 | text-center">
+          <h1 className="destination-main-h1 fade | text-center">
             Planet Destination
           </h1>
           <DestinationCarousel planetData={planetData} />
