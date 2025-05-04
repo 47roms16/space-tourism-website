@@ -4,6 +4,7 @@ import { NavLink, useOutletContext, useParams } from "react-router";
 import TextContent from "../TextContent";
 import { PlanetModel } from "@/models/PlanetModel";
 import { Canvas } from "@react-three/fiber";
+import Errorpage from "@/pages/Errorpage";
 
 function PlanetDetail() {
   const planetData: DestinationType[] = useOutletContext();
@@ -15,7 +16,7 @@ function PlanetDetail() {
 
   return (
     <>
-      {planet && (
+      {planet ? (
         <div className="flex items-center pt-[9.75rem] max-2xl:gap-10 max-lg:flex-col max-lg:gap-[5.25rem] max-lg:pt-16 max-lg:text-center max-md:gap-14">
           <figure className="figure-3d fade | relative flex-1">
             <Canvas className="aspect-square max-w-[30rem] max-lg:max-w-[18.75rem] max-sm:max-w-[9.375rem]">
@@ -40,6 +41,8 @@ function PlanetDetail() {
             </div>
           </div>
         </div>
+      ) : (
+        <Errorpage />
       )}
     </>
   );

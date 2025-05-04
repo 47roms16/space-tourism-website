@@ -3,6 +3,7 @@ import { Crew as CrewType } from "../../constants/types";
 import { NavLink, useOutletContext, useParams } from "react-router";
 
 import TextContent from "../TextContent";
+import Errorpage from "@/pages/Errorpage";
 
 function CrewDetail() {
   const crewData: CrewType[] = useOutletContext();
@@ -12,7 +13,7 @@ function CrewDetail() {
 
   return (
     <>
-      {crew && (
+      {crew ? (
         <div className="flex min-h-[43.75rem] justify-between gap-8 max-lg:flex-col max-lg:gap-8 max-lg:pt-16 max-lg:text-center max-md:gap-9">
           <div className="flex flex-col justify-between max-lg:items-center max-lg:gap-14 lg:pt-32 lg:pb-12">
             <div className="fade">
@@ -32,6 +33,8 @@ function CrewDetail() {
             <img src={crew.images.png} alt={`Image of ${crew.name}`} />
           </picture>
         </div>
+      ) : (
+        <Errorpage />
       )}
     </>
   );
