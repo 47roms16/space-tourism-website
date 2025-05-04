@@ -6,11 +6,11 @@ A frontend project built with React and TypeScript to explore destinations, crew
 
 ## Built with React and TypeScript
 
-This project was built using React and TypeScript. I wrote the codes for layout, UI, and implemented the functionality based on the design and data provided by Frontend Mentor. The data (destinations, crew, and technology) and the design inspiration were given as part of the challenge, but the code and components were all created from scratch.
+This project was built using React and TypeScript. I wrote the codes for layout, UI, and implemented the functionality based on the design and data provided by Frontend Mentor. The data (destinations, crew, and technology) and the design inspiration were given as part of the challenge, but the code and components were all created from scratch. I also added UI for /destination and /crew instead of empty page.
 
 ## 🚀 Key Highlights
 
-- React + TypeScript + React Router
+- React + TypeScript + React Router + React Three Fiber
 - Data loading with `createBrowserRouter` and route loaders
 - Dynamic routing (`/destinations/:planet`)
 - Fully responsive layout
@@ -33,6 +33,8 @@ This project was built using React and TypeScript. I wrote the codes for layout,
 
 - Design from [Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
 - Built by [Rommel San Jose](https://github.com/47roms16)
+
+## 3D model texture
 
 "Moon" texture (https://skfb.ly/6UxZx) by AirStudios is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
