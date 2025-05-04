@@ -1,10 +1,15 @@
-interface IconSrc {
+function NavButton({
+  src,
+  handleClick,
+}: {
   src: string;
-}
-
-function NavButton({ src }: IconSrc) {
+  handleClick: () => void;
+}) {
   return (
-    <button className="hidden cursor-pointer max-md:block">
+    <button
+      onClick={handleClick}
+      className="hidden cursor-pointer max-md:block"
+    >
       <Icon src={src} />
     </button>
   );
@@ -12,7 +17,7 @@ function NavButton({ src }: IconSrc) {
 
 export default NavButton;
 
-function Icon({ src }: IconSrc) {
+function Icon({ src }: { src: string }) {
   return (
     <svg className="aspect-square w-6">
       <use href={src}></use>
