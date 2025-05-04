@@ -1,6 +1,6 @@
 function Errorpage() {
   return (
-    <div className="bg-home | text-lavender-blue min-h-dvh content-center bg-cover bg-top text-center max-lg:bg-bottom">
+    <div className="text-lavender-blue min-h-dvh content-center bg-cover bg-top text-center max-lg:bg-bottom">
       <h1 className="font-bellefair text-5xl font-bold">404</h1>
       <h2 className="font-barlow mb-2 text-2xl">Page Not Found</h2>
       <p className="font-barlow-condensed mb-16 text-lg">
