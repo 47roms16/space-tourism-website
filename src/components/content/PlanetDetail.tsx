@@ -47,20 +47,6 @@ function PlanetDetail() {
 
 export default PlanetDetail;
 
-function Image({ src, altText }: { src: string; altText: string }) {
-  return (
-    <div className="flex-1">
-      <img
-        src={src}
-        alt={altText}
-        width={445}
-        height={445}
-        className="aspect-square w-[30rem] max-lg:max-w-[18.75rem] max-sm:max-w-[9.375rem]"
-      />
-    </div>
-  );
-}
-
 function DestinationNav({ data }: { data: DestinationType[] }) {
   return (
     <nav className="mb-[3.25rem]">
