@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { Outlet, useLocation } from "react-router";
 
 import Header from "../components/header/Header";
+import Attribution from "@/components/Attribution";
 
 function Root() {
   const location = useLocation();
@@ -26,6 +27,7 @@ function Root() {
       <main className="max-container | max-lg:pt-10 max-md:pt-12">
         <Outlet />
       </main>
+      <Attribution />
     </div>
   );
 }
