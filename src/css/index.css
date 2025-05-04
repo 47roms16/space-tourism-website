@@ -75,6 +75,16 @@ html {
   opacity: 0.5;
 }
 
+@media (width < 48rem /* 768px */) {
+  .header-nav-link.active::after,
+  .header-nav-link:not(.active)::after {
+    width: 3px;
+    height: 100%;
+    left: unset;
+    right: 0;
+  }
+}
+
 .destination-nav-link.active:after,
 .destination-nav-link:not(.active)::after {
   bottom: -0.75rem;
@@ -143,6 +153,12 @@ html {
   .cta-btn::before {
     width: 240%;
     height: 240%;
+  }
+}
+
+@media (width < 48rem /* 768px */) {
+  .header-nav-li:first-child .header-nav-link::before {
+    display: inline;
   }
 }
 
