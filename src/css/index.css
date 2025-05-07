@@ -46,7 +46,7 @@ html {
 /* HEADER & Content Nested Links */
 
 .header-nav-link.active::after,
-.destination-nav-link.active:after {
+.destination-nav-link.active::after {
   content: "";
   position: absolute;
   left: 0;
