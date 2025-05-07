@@ -39,7 +39,7 @@ html {
 .header-nav-link::before {
   content: counter(leading-zero, decimal-leading-zero);
   font-weight: bold;
-  letter-spacing: 0.16875rem; /* 2.7px */
+  letter-spacing: 2.7px;
   padding-right: 0.75rem; /* 12px */
 }
 
@@ -75,7 +75,7 @@ html {
   opacity: 0.5;
 }
 
-@media (width < 48rem /* 768px */) {
+@media (width < 768px) {
   .header-nav-link.active::after,
   .header-nav-link:not(.active)::after {
     width: 3px;
@@ -145,7 +145,7 @@ html {
   opacity: 0.5;
 }
 
-@media (width < 64rem /* 1024px */) {
+@media (width < 1024px) {
   .header-nav-li:first-child .header-nav-link::before {
     display: none;
   }
@@ -156,7 +156,7 @@ html {
   }
 }
 
-@media (width < 48rem /* 768px */) {
+@media (width < 768px) {
   .header-nav-li:first-child .header-nav-link::before {
     display: inline;
   }
